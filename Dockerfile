@@ -15,7 +15,7 @@ RUN useradd \
 WORKDIR /home/docker
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends gosu offlineimap \
+    && apt-get install -y --no-install-recommends gosu ca-certificates offlineimap \
     && rm -rf /var/lib/apt/lists/*
 
 COPY docker-entrypoint.sh /usr/local/bin/
