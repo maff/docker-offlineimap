@@ -13,7 +13,32 @@ $ docker run -it --rm \
   maff/offlineimap
 ```
 
-See [offlineimap's documentation](http://www.offlineimap.org/doc/quick_start.html) for config file examples.
+An example `offlineimaprc`:
+
+```
+[general]
+# make sure to map metadata to the mounted volume
+metadata = /target/metadata
+accounts = example
+
+[Account example]
+localrepository = example_local
+remoterepository = example_remote
+
+[Repository example_local]
+type = Maildir
+localfolders = /target/data
+
+[Repository example_remote]
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = IMAP
+readonly = True
+remotehost = mail.example.com
+remoteuser = username
+remotepass = password
+```
+
+See [offlineimap's documentation](http://www.offlineimap.org/doc/quick_start.html) for more config file examples.
 
 ## Customizing UID/GID
 
