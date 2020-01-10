@@ -21,7 +21,9 @@ By default, the container executes `offlineimap` as `docker` user with UID/GID s
 
 ```shell
 $ docker run -it --rm \
-  -v /path/to/offlineimaprc::/home/docker/.offlineimaprc:ro
+  -e UID=9500 \
+  -e GID=9500 \
+  -v /path/to/offlineimaprc:/home/docker/.offlineimaprc:ro \
   -v /path/to/target:/target \
   offlineimap
 
