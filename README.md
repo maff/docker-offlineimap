@@ -10,7 +10,7 @@ To run `offlineimap` with your specific configuration, mount a config file to `/
 $ docker run -it --rm \
   -v /path/to/offlineimaprc:/home/docker/.offlineimaprc:ro
   -v /path/to/target:/target \
-  offlineimap
+  maff/offlineimap
 ```
 
 See [offlineimap's documentation](http://www.offlineimap.org/doc/quick_start.html) for config file examples.
@@ -25,7 +25,7 @@ $ docker run -it --rm \
   -e GID=9500 \
   -v /path/to/offlineimaprc:/home/docker/.offlineimaprc:ro \
   -v /path/to/target:/target \
-  offlineimap
+  maff/offlineimap
 
 INFO: Changing 'docker' UID to '9500'
 INFO: Changing 'docker' GID to '9500'
